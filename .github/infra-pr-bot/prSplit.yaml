@@ -1,0 +1,6 @@
+sensitiveFiles:
+  production:
+    pathParts:
+      - "production"
+      - "prod"
+minimizeOldComments: false
