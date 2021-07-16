@@ -3,4 +3,8 @@ sensitiveFiles:
     pathParts:
       - "production"
       - "prod"
+  pci:
+    pathParts:
+      - "ccvault"
+      - "somePciThing"
 minimizeOldComments: false
