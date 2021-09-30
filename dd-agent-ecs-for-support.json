@@ -1,0 +1,75 @@
+{
+	"containerDefinitions": [{
+		"name": "kpetti-datadog-agent",
+		"image": "datadog/agent:latest",
+		"cpu": 100,
+		"memory": 512,
+		"essential": true,
+		"portMappings": [{
+			"hostPort": 8126,
+			"protocol": "tcp",
+			"containerPort": 8126
+		}],
+		"mountPoints": [{
+				"containerPath": "/var/run/docker.sock",
+				"sourceVolume": "docker_sock",
+				"readOnly": true
+			},
+			{
+				"containerPath": "/host/sys/fs/cgroup",
+				"sourceVolume": "cgroup",
+				"readOnly": true
+			},
+			{
+				"containerPath": "/host/proc",
+				"sourceVolume": "proc",
+				"readOnly": true
+			}
+		],
+		"environment": [{
+				"name": "DD_API_KEY",
+				"value": ""
+			},
+			{
+				"name": "DD_DOGSTATSD_NON_LOCAL_TRAFFIC",
+				"value": "true"
+			},
+			{
+				"name": "DD_SITE",
+				"value": "datadoghq.com"
+			},
+			{
+				"name": "DD_TAGS",
+				"value": "kpetti-dd-test"
+			},
+      {
+        "name": "DD_COLLECT_AWS_ENA_METRICS",
+        "value": "true"
+      },
+      {
+        "name": "DD_NETWORK_CONFIG",
+        "value": "true"
+      }
+		]
+	}],
+	"volumes": [{
+			"host": {
+				"sourcePath": "/var/run/docker.sock"
+			},
+			"name": "docker_sock"
+		},
+		{
+			"host": {
+				"sourcePath": "/proc/"
+			},
+			"name": "proc"
+		},
+		{
+			"host": {
+				"sourcePath": "/sys/fs/cgroup/"
+			},
+			"name": "cgroup"
+		}
+	],
+	"family": "kpetti-datadog-agent-task"
+}
