@@ -1,8 +1,8 @@
-SensitiveFiles:
+sensitiveFiles:
   production:
      - "production"
      - "prod"
   pci:
      - "ccvault"
      - "somePciThing"
-MinimizeOldComments: false
+minimizeOldComments: false
