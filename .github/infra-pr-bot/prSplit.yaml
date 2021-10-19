@@ -1,4 +1,4 @@
-sensitiveFiles:
+SensitiveFiles:
   production:
     pathParts:
       - "production"
@@ -7,4 +7,4 @@ sensitiveFiles:
     pathParts:
       - "ccvault"
       - "somePciThing"
-minimizeOldComments: false
+MinimizeOldComments: false
