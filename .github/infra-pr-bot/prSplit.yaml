@@ -3,6 +3,6 @@ SensitiveFiles:
      - "production"
      - "prod"
   pci:
-    - "ccvault"
+     - "ccvault"
      - "somePciThing"
 MinimizeOldComments: false
