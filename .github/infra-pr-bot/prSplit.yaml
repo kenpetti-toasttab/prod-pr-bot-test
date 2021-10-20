@@ -1,8 +1,0 @@
-sensitiveFiles:
-  production:
-     - "production"
-     - "prod"
-  pci:
-     - "ccvault"
-     - "somePciThing"
-minimizeOldComments: false
