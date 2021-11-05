@@ -2,3 +2,5 @@ _extends: root-toast-pr-bot-config:.github/toast-pr-bot/prSplit.yaml
 sensitiveFiles:
    production:
       - "prod"
+   pci:
+      - "pci"
